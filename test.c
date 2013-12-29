@@ -28,5 +28,6 @@ int main(int argc, char** argv) {
 	reply = redisCommand(c, "GET hallo");
 	printf("Hallo %s\n", reply->str);
 	freeReplyObject(reply);
+	redisFree(c);
 	return 0;
 }
